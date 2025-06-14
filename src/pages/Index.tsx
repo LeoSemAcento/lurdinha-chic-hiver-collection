@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Star, Crown, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Star, Crown, Sparkles, Clock, Package, Truck } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -87,6 +87,72 @@ const Index = () => {
           >
             Descobrir Coleção Exclusiva
           </Button>
+        </div>
+      </section>
+
+      {/* FOMO Section */}
+      <section className="py-20 bg-gradient-to-r from-rose-50 via-white to-amber-50 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-rose-50/30"
+          style={{
+            transform: `translateY(${scrollY * 0.2}px)`
+          }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="mb-8">
+              <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
+                A Moda Europeia Direto Para Seus Pés
+              </h2>
+              <p className="text-xl md:text-2xl text-slate-600 font-light max-w-4xl mx-auto leading-relaxed">
+                Apenas <span className="text-rose-600 font-bold">200 pares</span> de cada modelo chegaram ao Brasil. 
+                Uma oportunidade única de possuir peças que definem elegância e exclusividade.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-rose-100">
+                <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Clock className="w-8 h-8 text-rose-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Tiragem Limitada</h3>
+                <p className="text-slate-600 text-lg">Apenas 200 pares de cada modelo. Quando acabar, não reporemos.</p>
+              </div>
+              
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-rose-100">
+                <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Package className="w-8 h-8 text-rose-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Estoque no Brasil</h3>
+                <p className="text-slate-600 text-lg">Todos os modelos disponíveis em nosso estoque brasileiro.</p>
+              </div>
+              
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-rose-100">
+                <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Truck className="w-8 h-8 text-rose-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-3">Entrega Express</h3>
+                <p className="text-slate-600 text-lg">Receba em no máximo 2 dias úteis em todo território nacional.</p>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-r from-rose-600 to-rose-700 text-white p-8 rounded-2xl shadow-2xl">
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <Crown className="w-8 h-8 text-amber-300" />
+                <h3 className="text-2xl md:text-3xl font-bold">⚡ ÚLTIMAS 48 HORAS</h3>
+                <Crown className="w-8 h-8 text-amber-300" />
+              </div>
+              <p className="text-lg md:text-xl mb-6 font-light">
+                Desconto especial de lançamento! Apenas para as primeiras 100 clientes que reservarem seus pares.
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-white text-rose-600 hover:bg-gray-100 px-12 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+              >
+                Garantir Meu Par Agora
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
