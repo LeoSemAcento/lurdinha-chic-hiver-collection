@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Star, Crown, Sparkles, Clock, Package, Truck, ChevronRight } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -61,8 +62,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Top Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-rose-600 text-white py-2 text-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center space-x-8">
+            <span className="font-medium">🚚 FRETE GRÁTIS para compras acima de R$ 350</span>
+            <span className="font-medium">💳 10% OFF no PIX</span>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section with GIF Background */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-10">
         {/* GIF Background */}
         <div className="absolute inset-0">
           <img 
@@ -145,7 +156,7 @@ const Index = () => {
       </section>
 
       {/* Navigation Bar Overlay */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+      <nav className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -213,27 +224,29 @@ const Index = () => {
                   <Truck className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-800 mb-4">Entrega Express</h3>
-                <p className="text-slate-600 text-xl leading-relaxed">Receba em no máximo 2 dias úteis em todo território nacional.</p>
+                <p className="text-slate-600 text-xl leading-relaxed">Receba em no máximo dois dias úteis para Uberlândia.</p>
               </div>
             </div>
             
             <div className="bg-gradient-to-r from-rose-600 via-rose-700 to-rose-800 text-white p-12 rounded-3xl shadow-2xl relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse" />
-              <div className="relative z-10">
+              <div className="relative z-10 text-center">
                 <div className="flex items-center justify-center space-x-6 mb-6">
                   <Crown className="w-12 h-12 text-amber-300 animate-bounce" />
-                  <h3 className="text-4xl md:text-5xl font-bold">⚡ ÚLTIMAS 48 HORAS</h3>
+                  <h3 className="text-4xl md:text-5xl font-bold">⚡ ÚLTIMAS 72 HORAS</h3>
                   <Crown className="w-12 h-12 text-amber-300 animate-bounce" style={{ animationDelay: '0.5s' }} />
                 </div>
                 <p className="text-2xl md:text-3xl mb-8 font-light max-w-4xl mx-auto">
                   Desconto especial de lançamento! Apenas para as primeiras 100 clientes que reservarem seus pares.
                 </p>
-                <Button 
-                  size="lg" 
-                  className="bg-white text-rose-600 hover:bg-gray-100 px-16 py-6 text-2xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                >
-                  Garantir Meu Par Agora
-                </Button>
+                <div className="flex justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-rose-600 hover:bg-gray-100 px-16 py-6 text-2xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  >
+                    Garantir Meu Par Agora
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -324,7 +337,7 @@ const Index = () => {
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-lg">
                     <p className="text-amber-800 font-medium flex items-center">
                       <Clock className="w-5 h-5 mr-2" />
-                      Oferta por tempo limitado! Apenas 48h para garantir seu par com desconto exclusivo.
+                      Oferta por tempo limitado! Apenas 72h para garantir seu par com desconto exclusivo.
                     </p>
                   </div>
                 </div>
@@ -434,11 +447,11 @@ const Index = () => {
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-8">
                   <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <MapPin className="w-8 h-8 text-rose-600" />
+                    <Instagram className="w-8 h-8 text-rose-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">Showroom</h3>
-                  <p className="text-slate-600 mb-4">Visite nossa boutique</p>
-                  <p className="text-rose-600 font-semibold">Agendamento exclusivo</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-3">Instagram</h3>
+                  <p className="text-slate-600 mb-4">Siga nosso estilo exclusivo</p>
+                  <p className="text-rose-600 font-semibold">@lurdinhachic</p>
                 </CardContent>
               </Card>
             </div>
