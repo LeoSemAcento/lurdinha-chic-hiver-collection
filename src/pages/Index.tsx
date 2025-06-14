@@ -6,12 +6,26 @@ import { Instagram } from "lucide-react";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [currentPromo, setCurrentPromo] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Alternating promo messages
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPromo(prev => (prev + 1) % 2);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const promoMessages = [
+    "🚚 FRETE GRÁTIS para compras acima de R$ 350",
+    "💳 5% OFF no PIX"
+  ];
 
   const shoes = [
     {
@@ -62,18 +76,46 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Bar */}
+      {/* Fixed Top Bar - Only this should be fixed */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-rose-600 text-white py-2 text-sm">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center space-x-8">
-            <span className="font-medium">🚚 FRETE GRÁTIS para compras acima de R$ 350</span>
-            <span className="font-medium">💳 10% OFF no PIX</span>
+          <div className="flex items-center justify-center h-8 relative overflow-hidden">
+            {promoMessages.map((message, index) => (
+              <span
+                key={index}
+                className={`absolute inset-0 flex items-center justify-center font-medium transition-opacity duration-500 ${
+                  currentPromo === index ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {message}
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
+      {/* Static Navigation Bar */}
+      <nav className="bg-white/95 backdrop-blur-md shadow-lg mt-10">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Crown className="w-8 h-8 text-rose-600" />
+              <span className="text-2xl font-bold text-slate-800">Lurdinha Chic</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#colecao" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Coleção</a>
+              <a href="#sobre" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Sobre</a>
+              <a href="#contato" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Contato</a>
+              <Button className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-2 rounded-full">
+                Entrar
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section with GIF Background */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-10">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* GIF Background */}
         <div className="absolute inset-0">
           <img 
@@ -154,26 +196,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Navigation Bar Overlay */}
-      <nav className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Crown className="w-8 h-8 text-rose-600" />
-              <span className="text-2xl font-bold text-slate-800">Lurdinha Chic</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#colecao" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Coleção</a>
-              <a href="#sobre" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Sobre</a>
-              <a href="#contato" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Contato</a>
-              <Button className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-2 rounded-full">
-                Entrar
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
 
       {/* FOMO Section */}
       <section className="py-24 bg-gradient-to-br from-rose-50 via-white to-amber-50 relative overflow-hidden">
