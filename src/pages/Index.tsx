@@ -40,7 +40,7 @@ const Index = () => {
       description: "Para mulheres que comandam admiração onde quer que estejam. Inspiradas nas passarelas de Milão, estas botas são statement pieces que elevam qualquer look ao extraordinário.",
       price: "R$ 1.599",
       originalPrice: "R$ 2.199",
-      image: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "/lovable-uploads/b9b8a851-5fd6-4d50-90b4-64d60ede47c1.png",
       badge: "Últimas 25 peças"
     },
     {
