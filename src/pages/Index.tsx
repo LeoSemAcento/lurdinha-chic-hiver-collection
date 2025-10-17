@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Star, Crown, Sparkles, Clock, Package, Truck, ChevronRight } from "lucide-react";
 import { Instagram } from "lucide-react";
+import logoShoe from "@/assets/logo-shoe.jpg";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -98,9 +99,9 @@ const Index = () => {
       <nav className="bg-white/95 backdrop-blur-md shadow-lg mt-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Crown className="w-8 h-8 text-rose-600" />
-              <span className="text-2xl font-bold text-slate-800">Lurdinha Chic</span>
+          <div className="flex items-center space-x-2">
+              <img src={logoShoe} alt="Las Marries" className="w-8 h-8 object-contain" />
+              <span className="text-2xl font-bold text-slate-800">Las Marries</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#colecao" className="text-slate-700 hover:text-rose-600 font-medium transition-colors">Coleção</a>
