@@ -119,7 +119,7 @@ const Index = () => {
         {/* GIF Background */}
         <div className="absolute inset-0">
           <img 
-            src="https://i.postimg.cc/3NkN19Cp/V-deo-Lurdinha-Chic-Concepto.gif"
+            src="https://i.postimg.cc/rwC23CHP/31-megas-fundo-site-formato-gif.gif"
             alt="Lurdinha Chic Background"
             className="w-full h-full object-cover"
             style={{
